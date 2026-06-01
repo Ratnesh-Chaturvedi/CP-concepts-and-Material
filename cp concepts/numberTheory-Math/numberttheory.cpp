@@ -10,12 +10,9 @@ bool IsPrime(int n){
 
 }
 
-
-
 // find the factor of the number
 
 void factor(int n){
-
     for(int i=1;i*i<=n;i++){
         if(n%i==0){
             cout<<i<<" ";
@@ -50,6 +47,22 @@ int gcdrec(int a ,int b){
   return gcdrec(b,a%b);
 }
 
+// LCM ->LCM(a,b)=a×b​/GCD(a,b)
+long long  LCM(long long a,long long b) {
+    long long lcm = (a / gcd(a, b)) * b;
+    cout << "LCM = " << lcm << endl;
+
+    return 0;
+}
+
+// way2 to find lcm without overflow 
+// use (a / gcd(a,b)) * b instead of (a*b)/gcd
+// It helps avoid integer overflow for large numbers
+
+// Time => O(log(min(a,b)))​
+long long findLCM(long long a, long long b) {
+    return (a / gcd(a, b)) * b;
+}
 
 
 // Binary Exponentiation

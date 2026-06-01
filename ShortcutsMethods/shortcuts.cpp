@@ -20,8 +20,8 @@ reverse(s.begin(), s.end());         // Reverse
 sort(s.begin(), s.end());            // Sort alphabetically
 s += " world";                       // Concatenate
 s.substr(0, 3);                      // Substring
-s.find("lo");                        // Find substring
-s.erase(0, 2);                       // Erase characters
+s.find("lo");                        // Find substring // O(n*m) n=s.len , m=string
+s.erase(0, 2);                       // Erase characters 
 s.insert(2, "xx");                   // Insert substring
 transform(s.begin(), s.end(), s.begin(), ::toupper); // To uppercase
 transform(s.begin(), s.end(), s.begin(), ::tolower); // To lowercase
@@ -42,11 +42,16 @@ auto lb = lower_bound(v.begin(), v.end(), 5);
     cout << "lower_bound(5): index = " << lb - v.begin() << endl; 
 
 // Math formula 
-int g = gcd(a, b);   // Greatest Common Divisor
-int l = lcm(a, b);   // Least Common Multiple
+int g = __gcd(a, b);   // Greatest Common Divisor
+int l = __lcm(a, b);   // Least Common Multiple
 
 // bits 
 __builtin_popcount(15);       // Count of set bits (GCC/Clang)
 __builtin_ctz(16);            // Count trailing zeros
 __builtin_clz(16);            // Count leading zeros
 __builtin_parity(15);         // Parity (odd/even number of 1s)
+
+
+// wants to calculate ciel of long long 
+
+// ans= (n+x-1)/x;
